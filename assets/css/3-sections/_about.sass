@@ -6,29 +6,15 @@
   +justify-content(space-between)
 
   .face-img
-    border-radius: 50%
+    border-radius: 70%
     background-size: cover
     background-position: center
     background-image: url(../img/#{$avatar-path})
-    +size(200px)
+    +size(300px)
     +order(3)
-
-  [class^="icon-"]
-    +size(100px)
-    background: $bgcolor
-    border-radius: 50%
 
     path
       fill: $accent
-
-    &.icon-pencil
-      +order(1)
-    &.icon-mouse
-      +order(2)
-    &.icon-browser
-      +order(4)
-    &.icon-video
-      +order(5)
 
 @media screen and (max-width: 650px)
   .face-lockup

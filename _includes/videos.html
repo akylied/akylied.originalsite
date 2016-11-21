@@ -1,20 +1,45 @@
+
 <section>
-
-  <h3 id="videos">Our Videos</h3>
-  <center>
-
-  <video autoplay="autoplay" loop = "loop" id = "video-bg"  width="768" height="432">
-    <source src="/assets/img/Yoga.mp4" type="video/mp4">
-</video>
-   <video autoplay="autoplay" loop = "loop" id = "video-bg1"  width="768" height="432">
+ <center>
+<div style="text-align:center" onmouseover="Play()" onmouseout="Pause()"> 
+    <script src="functions.js"></script>
+    <video loop = "loop" id= "video" width="500" height="500" preload="metadata">
+       <source src="/assets/img/Yoga.mp4" type="video/mp4">
+      </video>
+<div style="text-align:center" onmouseover="Play()" onmouseout="Pause()"> 
+    <video autoplay loop = "loop" id= "video1" width="500" height="500" preload="metadata">
     <source src="/assets/img/test.mp4" type="video/mp4">
-</video>
-
-</video>
-</center>
 </section>
-<section>
-  <video autoplay="autoplay" loop = "loop" id = "video-bg2"  width="768" height="432">
-    <source src="/assets/img/hammock.mp4" type="video/mp4">
-</video>
-  </section>
+      </div>
+    </div>
+  </div>
+<script>
+  function SwapMP4forWEBM(content){
+  if(jQuery.browser.chrome || jQuery.browser.mozilla){
+    content.find("video").each(function(){
+      $(this).find("source").attr("src", $(this).find("source").attr("src").replace(".mp4", ".webm"))
+      $(this).find("source").attr("type", $(this).find("source").attr("type").replace("mp4", "webm"))
+    })
+  }
+  return content.html()
+}
+</script>
+
+<script type="text/javascript"> 
+var vid = document.getElementsByTagName("video");
+[].forEach.call(vid, function (item) {
+    item.addEventListener('mouseover', hoverVideo, false);
+    item.addEventListener('mouseout', hideVideo, false);
+});
+
+function hoverVideo(e)
+{   
+    this.play();
+}
+function hideVideo(e)
+{
+    this.pause();
+}  
+    
+</script> 
+</section>
